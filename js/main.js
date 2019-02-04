@@ -13,12 +13,10 @@ var $bookList = $('#books');
             $bookList.append($li);
             $div.insertAfter($li);
         }
-
-
     });
 
-    //Zad 4
-        $bookList.on('click', 'li', function(event) {
+    //Zadanie 4
+        $bookList.on('click', 'li', function() {
             var id = $(this).attr('data-id');
             var $desc = $(this).next();
             $desc.toggleClass('hidden');
@@ -28,9 +26,9 @@ var $bookList = $('#books');
                 method: 'GET'
             }).done(function(response) {
                 var $details = '<p><b>Autor:</b> ' + response.author + '</p>' +
-                               '<p><b>Gatunek:</b> ' + response.genre + '</p>' +
-                               '<p><b>Wydawca:</b> ' + response.publisher + '</p>' +
-                               '<p><b>ISBN:</b> ' + response.isbn + '</p>';
+                                '<p><b>ISBN:</b> ' + response.isbn + '</p>' +
+                                '<p><b>Wydawca:</b> ' + response.publisher + '</p>' +
+                                '<p><b>Gatunek:</b> ' + response.genre + '</p>';
                 $desc.html($details);
             })
         });
