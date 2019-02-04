@@ -15,21 +15,22 @@ var $bookList = $('#books');
         }
     });
 
-    //Zadanie 4
+    //Zadanie 4 - wypełnienie div-a danymi
+
         $bookList.on('click', 'li', function() {
-            //var id = $(this).attr('data-id');
+            var id = $(this).attr('data-id');
             var $desc = $(this).next();
             $desc.toggleClass('hidden');
 
-            // $.ajax({
-            //     url: url + id,
-            //     method: 'GET'
-            // }).done(function(response) {
-            //     var $details = '<p><b>Autor:</b> ' + response.author + '</p>' +
-            //                     '<p><b>ISBN:</b> ' + response.isbn + '</p>' +
-            //                     '<p><b>Wydawca:</b> ' + response.publisher + '</p>' +
-            //                     '<p><b>Gatunek:</b> ' + response.genre + '</p>';
-            //     $desc.html($details);
-            // })
+            $.ajax({
+                url: url + id,
+                method: 'GET'
+            }).done(function(response) {
+                var $details = '<p><b>Autor:</b> ' + response.author + '</p>' +
+                                '<p><b>ISBN:</b> ' + response.isbn + '</p>' +
+                                '<p><b>Wydawca:</b> ' + response.publisher + '</p>' +
+                                '<p><b>Gatunek:</b> ' + response.genre + '</p>';
+                $desc.html($details);
+            })
         });
 
