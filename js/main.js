@@ -5,10 +5,10 @@ var $bookList = $('#books');
     $.ajax({
         url: url,
         method: 'GET'
-    }).done(function(response) {
-        for(var i= 0; i < response.length; i++) {
-            var $li = $('<li data-id="' + response[i].id + '">');
-            $li.text(response[i].title);
+    }).done(function(result) {
+        for(var i= 0; i < result.length; i++) {
+            var $li = $('<li data-id="' + result[i].id + '">');
+            $li.text(result[i].title);
             var $div = $('<div class="alert alert-dismissible alert-secondary description hidden">');
             $bookList.append($li);
             $div.insertAfter($li);
@@ -25,11 +25,11 @@ var $bookList = $('#books');
             $.ajax({
                 url: url + id,
                 method: 'GET'
-            }).done(function(response) {
-                var $details = '<p><b>Autor:</b> ' + response.author + '</p>' +
-                                '<p><b>ISBN:</b> ' + response.isbn + '</p>' +
-                                '<p><b>Wydawca:</b> ' + response.publisher + '</p>' +
-                                '<p><b>Gatunek:</b> ' + response.genre + '</p>';
+            }).done(function(result) {
+                var $details = '<p><b>Autor:</b> ' + result.author + '</p>' +
+                                '<p><b>ISBN:</b> ' + result.isbn + '</p>' +
+                                '<p><b>Wydawca:</b> ' + result.publisher + '</p>' +
+                                '<p><b>Gatunek:</b> ' + result.genre + '</p>';
                 $desc.html($details);
             })
         });
