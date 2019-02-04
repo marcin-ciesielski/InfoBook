@@ -11,7 +11,6 @@ var $bookList = $('#books');
             $li.text(response[i].title);
             var $div = $('<div class="description hidden">');
             $bookList.append($li);
-            //$li.append($del);
             $div.insertAfter($li);
         }
 
@@ -33,7 +32,6 @@ var $bookList = $('#books');
                                '<p><b>Wydawca:</b> ' + response.publisher + '</p>' +
                                '<p><b>ISBN:</b> ' + response.isbn + '</p>';
                 $desc.html($details);
-
             })
         });
 
