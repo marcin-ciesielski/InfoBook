@@ -11,9 +11,13 @@ display: none/block najlepsza opcja
     display: none;
 }
 
-div {
-    border-top-style: solid;
-    border-top-width: thin;
-    border-bottom-style: solid;
-    border-bottom-width: thin;
+/*div {*/
+    /*border-top-style: solid;*/
+    /*border-top-width: thin;*/
+    /*border-bottom-style: solid;*/
+    /*border-bottom-width: thin;*/
+/*}*/
+
+.form {
+    margin-left: 10px;
 }
